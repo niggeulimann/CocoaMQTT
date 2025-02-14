@@ -484,32 +484,7 @@ extension CocoaMQTTWebSocket.StarscreamConnection: WebSocketDelegate {
         }
     }
     
-    public func didReceive(event: Starscream.WebSocketEvent, client: Starscream.WebSocket) {
-        switch event {
-        case .connected(_):
-            delegate?.connectionOpened(self)
-        case .disconnected(_, let code):
-            delegate?.connectionClosed(self, withError: nil, withCode: code)
-        case .text(let string):
-            delegate?.connection(self, receivedString: string)
-        case .binary(let data):
-            delegate?.connection(self, receivedData: data)
-        case .ping(_):
-            break
-        case .pong(_):
-            break
-        case .viabilityChanged(_):
-            break
-        case .reconnectSuggested(_):
-            break
-        case .cancelled:
-            delegate?.connectionClosed(self, withError: nil, withCode: nil)
-        case .error(let error):
-            delegate?.connectionClosed(self, withError: error, withCode: nil)
-        default:
-            break
-        }
-    }
+   
 }
 
 // MARK: - Helper
