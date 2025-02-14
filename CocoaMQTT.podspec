@@ -9,8 +9,8 @@ Pod::Spec.new do |s|
   s.swift_version = "5.0"
   s.requires_arc = true
   s.osx.deployment_target = "10.12"
-  s.ios.deployment_target = "12.0"
-  s.tvos.deployment_target = "10.0"
+  s.ios.deployment_target = '12.0'
+  s.tvos.deployment_target = "12.0"
   # s.watchos.deployment_target = "2.0"
   s.source   = { :git => "https://github.com/niggeulimann/CocoaMQTT.git", :tag => "2.3.1"}
   s.default_subspec = 'Core'
